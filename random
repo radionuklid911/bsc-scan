@@ -1,0 +1,12 @@
+use rand::distributions::Alphanumeric;
+use rand::{thread_rng, Rng};
+
+fn main() {
+    let length = 10;
+    let random_string: String = thread_rng()
+        .sample_iter(&Alphanumeric)
+        .take(length)
+        .map(char::from)
+        .collect();
+
+    println!("Random string: {}", random_string);
